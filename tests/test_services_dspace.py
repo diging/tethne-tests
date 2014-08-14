@@ -1,9 +1,10 @@
 from settings import *
+from sensitive import *
+
 import unittest
 
 from tethne.services.dspace import DSpace
     
-
 collectionid = 43
 endpoint = 'https://dstools.hpsrepository.asu.edu/rest/'
 
