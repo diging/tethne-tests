@@ -1,6 +1,6 @@
 # Profiling.
-from pycallgraph import PyCallGraph
-from pycallgraph.output import GraphvizOutput
+#from pycallgraph import PyCallGraph
+#from pycallgraph.output import GraphvizOutput
 cg_path = './tests/callgraphs/'
 profile = False     # If True, will generate callgraphs.
 
