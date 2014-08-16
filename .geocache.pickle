@@ -1,0 +1,270 @@
+(dp0
+S'CTR OCEANOG MURCIA, SPAIN'
+p1
+ccopy_reg
+_reconstructor
+p2
+(ctethne.services.geocode
+Location
+p3
+c__builtin__
+object
+p4
+Ntp5
+Rp6
+(dp7
+S'latitude'
+p8
+F37.9922399
+sS'place'
+p9
+VMurcia, Murcia, Spain
+p10
+sS'longitude'
+p11
+F-1.1306544
+sbsS'UNIV PARIS 06, FRANCE'
+p12
+g2
+(g3
+g4
+Ntp13
+Rp14
+(dp15
+g8
+F48.8468325
+sg9
+VUNIVERSITE PARIS II, 12 Place du Panthéon, 75005 Paris, France
+p16
+sg11
+F2.3448885
+sbsS'WENZHOU UNIV, PEOPLES R CHINA'
+p17
+g2
+(g3
+g4
+Ntp18
+Rp19
+(dp20
+g8
+F27.994267
+sg9
+VWenzhou, Zhejiang, China
+p21
+sg11
+F120.699367
+sbsS' PEOPLES R CHINA'
+p22
+g2
+(g3
+g4
+Ntp23
+Rp24
+(dp25
+g8
+F38.057347
+sg9
+VPeople's Hall, Jingyuan East Road, Yanshan, Cangzhou, Hebei, China, 061300
+p26
+sg11
+F117.233375
+sbsS'INST SCI & TECHNOL INFORMAT ZHEJIANG PROV, PEOPLES R CHINA'
+p27
+NsS'UNIV ALGARVE, PORTUGAL'
+p28
+g2
+(g3
+g4
+Ntp29
+Rp30
+(dp31
+g8
+F37.0439713
+sg9
+VUniversity of the Algarve, Estrada da Penha, 8005-139 Faro Municipality, Portugal
+p32
+sg11
+F-7.972207900000001
+sbsS'UNIV SALERNO, ITALY'
+p33
+g2
+(g3
+g4
+Ntp34
+Rp35
+(dp36
+g8
+F40.7687118
+sg9
+VUniversity of Salerno, Via Giovanni Paolo II, 132, 84084 Fisciano Salerno, Italy
+p37
+sg11
+F14.7920179
+sbsS'EINDHOVEN UNIV TECHNOL, NETHERLANDS'
+p38
+g2
+(g3
+g4
+Ntp39
+Rp40
+(dp41
+g8
+F51.44860980000001
+sg9
+VEindhoven University of Technology, 5612 AZ Eindhoven, The Netherlands
+p42
+sg11
+F5.4907148
+sbsS'AMER UNIV BEIRUT, LEBANON'
+p43
+g2
+(g3
+g4
+Ntp44
+Rp45
+(dp46
+g8
+F33.8927778
+sg9
+VLebanese American University, Beirut, Lebanon
+p47
+sg11
+F35.4777778
+sbsS'VICTORIA UNIV, AUSTRALIA'
+p48
+g2
+(g3
+g4
+Ntp49
+Rp50
+(dp51
+g8
+F-37.7933058
+sg9
+VVictoria University, Ballarat Road, Footscray VIC 3011, Australia
+p52
+sg11
+F144.8964966
+sbsS'HZI HELMHOLTZ CTR INFECT RES, GERMANY'
+p53
+NsS'UNIV SCI & TECHNOL CHINA, PEOPLES R CHINA'
+p54
+g2
+(g3
+g4
+Ntp55
+Rp56
+(dp57
+g8
+F30.6311915
+sg9
+VSichuan University Science & Technology Mansion, Jiuyan Bridge, Wuhou, Chengdu, Sichuan, China, 610041
+p58
+sg11
+F104.076857
+sbsS'UNIV BOLOGNA, ITALY'
+p59
+g2
+(g3
+g4
+Ntp60
+Rp61
+(dp62
+g8
+F44.4962318
+sg9
+VAlma Mater Studiorum - Università di Bologna, Via Zamboni, 33, 40126 Bologna, Italy
+p63
+sg11
+F11.354157
+sbsS'UNIV WINNIPEG, CANADA'
+p64
+g2
+(g3
+g4
+Ntp65
+Rp66
+(dp67
+g8
+F49.8916749
+sg9
+VUniversity of Winnipeg, 515 Portage Avenue, Winnipeg, MB R3B 2E9, Canada
+p68
+sg11
+F-97.15450729999999
+sbsS'UNIV TECHNOL SYDNEY, AUSTRALIA'
+p69
+g2
+(g3
+g4
+Ntp70
+Rp71
+(dp72
+g8
+F-33.8832376
+sg9
+VUniversity of Technology, Sydney, 15 Broadway, Ultimo NSW 2007, Australia
+p73
+sg11
+F151.2004942
+sbsS'UNIV MELBOURNE, AUSTRALIA'
+p74
+g2
+(g3
+g4
+Ntp75
+Rp76
+(dp77
+g8
+F-37.8478435
+sg9
+VDeakin University, Melbourne Burwood Campus, 221 Burwood Highway, Burwood VIC 3125, Australia
+p78
+sg11
+F145.114873
+sbsS'UNIV COIMBRA, PORTUGAL'
+p79
+g2
+(g3
+g4
+Ntp80
+Rp81
+(dp82
+g8
+F40.2102343
+sg9
+VMuseu da Ciência da Universidade de Coimbra, Universidade de Coimbra - Faculdade de Medicina, University of Coimbra, 3000-272 Coimbra Municipality, Portugal
+p83
+sg11
+F-8.423667199999999
+sbsS' GERMANY'
+p84
+g2
+(g3
+g4
+Ntp85
+Rp86
+(dp87
+g8
+F51.165691
+sg9
+VGermany
+p88
+sg11
+F10.451526
+sbsS'UNIV PAIS VASCO EUSKAL HERRIKO UNIBERTSITATEA, SPAIN'
+p89
+g2
+(g3
+g4
+Ntp90
+Rp91
+(dp92
+g8
+F43.3073242
+sg9
+VEuskal Herriko Unibertsitatea, Avenida de Tolosa, 54, 20018 Donostia, G¡puzkoa, Gipuzkoa, Spain
+p93
+sg11
+F-2.0097747
+sbs.
