@@ -216,6 +216,19 @@ class TestCorpusTokenization(unittest.TestCase):
         fig = D.plot_distribution('date', 'jtitle', mode='features',
                                     fkwargs=fkwargs, interpolation='none')
 
+    def test_plot_distribution(self):
+        filt = lambda s: len(s) > 3
+        D = Corpus(self.papers, features={'unigrams': self.ngrams},
+                                        index_by='doi',
+                                        exclude=set(stopwords.words()),
+                                        filt=filt)
+
+        D.slice('date', 'time_period', window_size=5)
+        D.slice('jtitle')
+    
+        fig = D.plot_distribution('jtitle', ftype='barh')
+        import matplotlib.pyplot as plt
+        plt.savefig(outpath + '/jtitle.png')
 
     def test_tokenize_filter(self):
         """
