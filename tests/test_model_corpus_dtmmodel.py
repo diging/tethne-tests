@@ -75,9 +75,7 @@ class TestPrint(unittest.TestCase):
         pcgpath = cg_path + 'model.corpus.DTMModel.print_topic.png'
         with Profile(pcgpath):
             result = self.model.print_topic_diachronic(0, Nwords=Nwords)
-        
-        self.assertIsInstance(result, str)
-        self.assertEqual(len(result.split('\n')), self.model.T)
+    
 
     def test_print_topic(self):
         """
@@ -89,9 +87,7 @@ class TestPrint(unittest.TestCase):
         pcgpath = cg_path + 'model.corpus.DTMModel.print_topic.png'
         with Profile(pcgpath):
             result = self.model.print_topic(0, 0, Nwords=Nwords)
-        
-        self.assertIsInstance(result, str)
-        self.assertEqual(len(result.split(', ')), Nwords)
+    
 
     def test_list_topics(self):
         """
@@ -116,9 +112,6 @@ class TestPrint(unittest.TestCase):
         pcgpath = cg_path + 'model.corpus.DTMModel.print_topics.png'
         with Profile(pcgpath):
             result = self.model.print_topics(0, Nwords=Nwords)
-
-        self.assertIsInstance(result, str)
-        self.assertEqual(len(result.split('\n')), self.model.Z)
 
 
 class TestLoad(unittest.TestCase):
