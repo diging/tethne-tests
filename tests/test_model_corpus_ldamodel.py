@@ -68,6 +68,7 @@ class TestLoad(unittest.TestCase):
         self.assertIsInstance(meta.keys()[0], int)
         self.assertIsInstance(meta.values()[0], dict)
         self.assertIsInstance(meta.values()[0]['id'], str)
+        self.assertIsInstance(meta.values()[0]['date'], int)
 
     def test_load(self):
         """
