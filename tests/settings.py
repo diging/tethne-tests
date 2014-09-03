@@ -1,6 +1,12 @@
 # Profiling.
 #from pycallgraph import PyCallGraph
 #from pycallgraph.output import GraphvizOutput
+import logging
+logging.basicConfig(filename=None, format='%(asctime)-6s: %(name)s - %(levelname)s - %(module)s - %(funcName)s - %(lineno)d - %(message)s')
+logger = logging.getLogger(__name__)
+logger.setLevel('DEBUG')
+
+
 cg_path = './tests/callgraphs/'
 profile = False     # If True, will generate callgraphs.
 
@@ -29,5 +35,5 @@ dtm_path = './tethne/model/bin/dtm'
 
 # TODO: remove this later.
 import sys
-#sys.path.append('/Users/bpeirson/Repositories/tethne')
-sys.path.append('/Users/erickpeirson/tethne')
+sys.path.append('/Users/bpeirson/Repositories/tethne')
+#sys.path.append('/Users/erickpeirson/tethne')
