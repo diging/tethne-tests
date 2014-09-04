@@ -65,23 +65,24 @@ class TestSQLPapers(unittest.TestCase):
 
     def test_iter(self):
         spapers = wos.read(datapath + '/wos.txt', papers=self.sqlpapers)
+        i = 0
         for s in spapers:
-	    pass
-            #print s
+            self.assertIsInstance(s, Paper)
+            i += 1
+        self.assertEqual(i, len(spapers))   # Should iterate over all Papers.
 
-#    def test_corpus(self):
-#        """
-#        Should be able to pass a SQLPaper to a :class:`.Corpus`\.
-#        """
-#        # Read the data into the SQL database.
-#        spapers = wos.read(datapath + '/wos.txt', papers=self.sqlpapers)
-#        del spapers
-#
-#        # Now start fresh and spin up a Corpus.
-#        sqlpapers = SQLPapers(dbparams, table='tethne_test')
-#        c = Corpus(sqlpapers)
+    def test_corpus(self):
+        """
+        Should be able to pass a SQLPaper to a :class:`.Corpus`\.
+        """
+        # Read the data into the SQL database.
+        spapers = wos.read(datapath + '/wos.txt', papers=self.sqlpapers)
+        del spapers
 
-
+        # Now start fresh and spin up a Corpus.
+        sqlpapers = SQLPapers(self.conn, dbparams, table='tethne_test')
+        c = Corpus(sqlpapers)
+        
     def test_append(self):
         """
         Should be able to iteratively append :class:`.Paper`\s to the list.

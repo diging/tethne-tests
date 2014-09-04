@@ -35,5 +35,5 @@ dtm_path = './tethne/model/bin/dtm'
 
 # TODO: remove this later.
 import sys
-sys.path.append('/Users/bpeirson/Repositories/tethne')
-#sys.path.append('/Users/erickpeirson/tethne')
+#sys.path.append('/Users/bpeirson/Repositories/tethne')
+sys.path.append('/Users/erickpeirson/tethne')

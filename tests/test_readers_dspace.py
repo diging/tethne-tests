@@ -56,6 +56,9 @@ class TestReaderDSpace(unittest.TestCase):
         self.assertGreater(len(corpus.all_papers()[0]['contents']), 0)
         
         corpus.contents_to_features()
+        
+        from tethne.persistence import hdf5
+        h5 = hdf5.to_hdf5(corpus, datapath='/Users/erickpeirson/Desktop/test.h5')
 
 if __name__ == '__main__':
     unittest.main()
