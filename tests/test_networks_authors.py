@@ -35,6 +35,25 @@ class TestCoauthors(unittest.TestCase):
         self.assertGreater(len(coauthors.nodes()), 0)
         self.assertGreater(len(coauthors.edges()), 0)
         self.assertIn('latitude', coauthors.nodes(data=True)[0][1])
+        
+class TestCoInstitution(unittest.TestCase):
+    def setUp(self):
+        self.papers = wos.read(datapath + '/wos.txt')
+        
+    def test_coinstitution(self):
+        coinst = authors.coinstitution(self.papers)
+        self.assertEqual(len(coinst.edges()), 113)
+        self.assertEqual(len(coinst.nodes()), 51)
+        
+class TestAuthorInstitution(unittest.TestCase):
+    def setUp(self):
+        self.papers = wos.read(datapath + '/wos.txt') 
+        
+    def test_author_institution(self):
+        auinst = authors.author_institution(self.papers)
+        self.assertEqual(len(auinst.edges()), 158)
+        self.assertEqual(len(auinst.nodes()), 78)
+        self.assertIn('type', auinst.nodes(data=True)[0][1])
 
 if __name__ == '__main__':
     unittest.main()

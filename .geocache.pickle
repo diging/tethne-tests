@@ -100,7 +100,7 @@ VUniversity of Salerno, Via Giovanni Paolo II, 132, 84084 Fisciano Salerno, Ital
 p37
 sg11
 F14.7920179
-sbsS'EINDHOVEN UNIV TECHNOL, NETHERLANDS'
+sbsS'AMER UNIV BEIRUT, LEBANON'
 p38
 g2
 (g3
@@ -109,13 +109,13 @@ Ntp39
 Rp40
 (dp41
 g8
-F51.44860980000001
+F33.8927778
 sg9
-VEindhoven University of Technology, 5612 AZ Eindhoven, The Netherlands
+VLebanese American University, Beirut, Lebanon
 p42
 sg11
-F5.4907148
-sbsS'AMER UNIV BEIRUT, LEBANON'
+F35.4777778
+sbsS'VICTORIA UNIV, AUSTRALIA'
 p43
 g2
 (g3
@@ -124,30 +124,30 @@ Ntp44
 Rp45
 (dp46
 g8
-F33.8927778
-sg9
-VLebanese American University, Beirut, Lebanon
-p47
-sg11
-F35.4777778
-sbsS'VICTORIA UNIV, AUSTRALIA'
-p48
-g2
-(g3
-g4
-Ntp49
-Rp50
-(dp51
-g8
 F-37.7933058
 sg9
 VVictoria University, Ballarat Road, Footscray VIC 3011, Australia
-p52
+p47
 sg11
 F144.8964966
 sbsS'HZI HELMHOLTZ CTR INFECT RES, GERMANY'
-p53
+p48
 NsS'UNIV SCI & TECHNOL CHINA, PEOPLES R CHINA'
+p49
+g2
+(g3
+g4
+Ntp50
+Rp51
+(dp52
+g8
+F30.6311915
+sg9
+VSichuan University Science & Technology Mansion, Jiuyan Bridge, Wuhou, Chengdu, Sichuan, China, 610041
+p53
+sg11
+F104.076857
+sbsS'UNIV WINNIPEG, CANADA'
 p54
 g2
 (g3
@@ -156,13 +156,13 @@ Ntp55
 Rp56
 (dp57
 g8
-F30.6311915
+F49.8916749
 sg9
-VSichuan University Science & Technology Mansion, Jiuyan Bridge, Wuhou, Chengdu, Sichuan, China, 610041
+VUniversity of Winnipeg, 515 Portage Avenue, Winnipeg, MB R3B 2E9, Canada
 p58
 sg11
-F104.076857
-sbsS'UNIV BOLOGNA, ITALY'
+F-97.15450729999999
+sbsS'EINDHOVEN UNIV TECHNOL, NETHERLANDS'
 p59
 g2
 (g3
@@ -171,13 +171,13 @@ Ntp60
 Rp61
 (dp62
 g8
-F44.4962318
+F51.44860980000001
 sg9
-VAlma Mater Studiorum - Università di Bologna, Via Zamboni, 33, 40126 Bologna, Italy
+VEindhoven University of Technology, 5612 AZ Eindhoven, The Netherlands
 p63
 sg11
-F11.354157
-sbsS'UNIV WINNIPEG, CANADA'
+F5.4907148
+sbsS'UNIV TECHNOL SYDNEY, AUSTRALIA'
 p64
 g2
 (g3
@@ -186,13 +186,13 @@ Ntp65
 Rp66
 (dp67
 g8
-F49.8916749
+F-33.8832376
 sg9
-VUniversity of Winnipeg, 515 Portage Avenue, Winnipeg, MB R3B 2E9, Canada
+VUniversity of Technology, Sydney, 15 Broadway, Ultimo NSW 2007, Australia
 p68
 sg11
-F-97.15450729999999
-sbsS'UNIV TECHNOL SYDNEY, AUSTRALIA'
+F151.2004942
+sbsS'UNIV COIMBRA, PORTUGAL'
 p69
 g2
 (g3
@@ -201,12 +201,12 @@ Ntp70
 Rp71
 (dp72
 g8
-F-33.8832376
+F40.2102343
 sg9
-VUniversity of Technology, Sydney, 15 Broadway, Ultimo NSW 2007, Australia
+VMuseu da Ciência da Universidade de Coimbra, Universidade de Coimbra - Faculdade de Medicina, University of Coimbra, 3000-272 Coimbra Municipality, Portugal
 p73
 sg11
-F151.2004942
+F-8.423667199999999
 sbsS'UNIV MELBOURNE, AUSTRALIA'
 p74
 g2
@@ -222,7 +222,7 @@ VDeakin University, Melbourne Burwood Campus, 221 Burwood Highway, Burwood VIC 3
 p78
 sg11
 F145.114873
-sbsS'UNIV COIMBRA, PORTUGAL'
+sbsS'UNIV BOLOGNA, ITALY'
 p79
 g2
 (g3
@@ -231,12 +231,12 @@ Ntp80
 Rp81
 (dp82
 g8
-F40.2102343
+F44.4962318
 sg9
-VMuseu da Ciência da Universidade de Coimbra, Universidade de Coimbra - Faculdade de Medicina, University of Coimbra, 3000-272 Coimbra Municipality, Portugal
+VAlma Mater Studiorum - Università di Bologna, Via Zamboni, 33, 40126 Bologna, Italy
 p83
 sg11
-F-8.423667199999999
+F11.354157
 sbsS' GERMANY'
 p84
 g2
