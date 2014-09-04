@@ -6,7 +6,7 @@ import psycopg2
 
 from tethne.persistence.psql.paper import SQLPapers, PAPER_TABLE
 from tethne.readers import wos
-from tethne import Paper
+from tethne import Paper, Corpus
 
 dbparams = {
     'host': 'localhost',
@@ -15,12 +15,13 @@ dbparams = {
     'user': 'tethne',
     'password': 'tethneus',
 }
+dbargs = ' '.join(
+        ['{0}={1}'.format(k,v) for k,v in dbparams.iteritems()]
+        )
 
 class TestSQLPapers(unittest.TestCase):
     def setUp(self):
-        dbargs = ' '.join(
-                ['{0}={1}'.format(k,v) for k,v in dbparams.iteritems()]
-                )
+
         self.conn = psycopg2.connect(dbargs)
         self.cur = self.conn.cursor()
 
@@ -46,8 +47,7 @@ class TestSQLPapers(unittest.TestCase):
 
             self.conn.commit()
         self.cur.close()
-
-        self.sqlpapers = SQLPapers(dbparams, table='tethne_test')
+        self.sqlpapers = SQLPapers(self.conn, dbparams, table='tethne_test')
 
 
         self.papers = wos.read(datapath + '/wos.txt')
@@ -57,11 +57,29 @@ class TestSQLPapers(unittest.TestCase):
         When passed as a kwarg to the WoS reader, should be used as the
         container for parsed :class:`.Paper`\s.
         """
-        
+
         spapers = wos.read(datapath + '/wos.txt', papers=self.sqlpapers)
         self.assertIsInstance(spapers, SQLPapers)
         self.assertEqual(len(spapers), 10)
         self.assertIsInstance(spapers[0], Paper)
+
+    def test_iter(self):
+        spapers = wos.read(datapath + '/wos.txt', papers=self.sqlpapers)
+        for s in spapers:
+            print s
+
+#    def test_corpus(self):
+#        """
+#        Should be able to pass a SQLPaper to a :class:`.Corpus`\.
+#        """
+#        # Read the data into the SQL database.
+#        spapers = wos.read(datapath + '/wos.txt', papers=self.sqlpapers)
+#        del spapers
+#
+#        # Now start fresh and spin up a Corpus.
+#        sqlpapers = SQLPapers(dbparams, table='tethne_test')
+#        c = Corpus(sqlpapers)
+
 
     def test_append(self):
         """
@@ -116,7 +134,7 @@ class TestSQLPapers(unittest.TestCase):
         """
         Destroy testing table.
         """
-
+        self.conn.commit()
         self.cur = self.conn.cursor()
 
         self.cur.execute("""DROP TABLE tethne_test;""")
