@@ -66,7 +66,8 @@ class TestSQLPapers(unittest.TestCase):
     def test_iter(self):
         spapers = wos.read(datapath + '/wos.txt', papers=self.sqlpapers)
         for s in spapers:
-            print s
+	    pass
+            #print s
 
 #    def test_corpus(self):
 #        """
