@@ -5,7 +5,7 @@ import unittest
 import psycopg2
 
 from tethne.persistence.psql.paper import SQLPapers, PAPER_TABLE
-from tethne.readers import wos
+from tethne.readers import wos, dfr, scopus
 from tethne import Paper, Corpus
 
 dbparams = {
@@ -52,7 +52,7 @@ class TestSQLPapers(unittest.TestCase):
 
         self.papers = wos.read(datapath + '/wos.txt')
 
-    def test_read(self):
+    def test_read_wos(self):
         """
         When passed as a kwarg to the WoS reader, should be used as the
         container for parsed :class:`.Paper`\s.
@@ -62,6 +62,28 @@ class TestSQLPapers(unittest.TestCase):
         self.assertIsInstance(spapers, SQLPapers)
         self.assertEqual(len(spapers), 10)
         self.assertIsInstance(spapers[0], Paper)
+        
+    def test_read_dfr(self):
+        """
+        When passed as a kwarg to the DfR reader, should be used as the
+        container for parsed :class:`.Paper`\s.
+        """
+        dfrdata = '{0}/dfr'.format(datapath)
+        spapers = dfr.read(dfrdata, papers=self.sqlpapers)
+        self.assertIsInstance(spapers, SQLPapers)
+        self.assertEqual(len(spapers), 241)
+        self.assertIsInstance(spapers[0], Paper)
+        
+    def test_read_scopus(self):
+        """
+        When passed as a kwarg to the DfR reader, should be used as the
+        container for parsed :class:`.Paper`\s.
+        """
+        scopusdata = '{0}/scopus/scopus.csv'.format(datapath)
+        spapers = scopus.read(scopusdata, papers=self.sqlpapers)
+        self.assertIsInstance(spapers, SQLPapers)
+        self.assertEqual(len(spapers), 20)
+        self.assertIsInstance(spapers[0], Paper)        
 
     def test_iter(self):
         spapers = wos.read(datapath + '/wos.txt', papers=self.sqlpapers)
