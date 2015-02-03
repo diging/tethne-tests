@@ -8,6 +8,8 @@ import unittest
 import networkx as nx
 import os
 
+
+
 class TestSifWriter(unittest.TestCase):
     def setUp(self):
         self.simple_graph = nx.Graph() 

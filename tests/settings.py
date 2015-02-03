@@ -32,8 +32,3 @@ temppath = './tests/sandbox/temp'
 outpath = './tests/sandbox/out'
 mallet_path = '/Applications/mallet-2.0.7'
 dtm_path = './tethne/model/bin/dtm'
-
-# TODO: remove this later.
-import sys
-#sys.path.append('/Users/bpeirson/Repositories/tethne')
-sys.path.append('/Users/erickpeirson/tethne')
