@@ -23,7 +23,8 @@ class TestCorpus(unittest.TestCase):
 			corpus = Corpus(self.papers, index_by='wosid')	
 		except Exception as E:
 			failure_msg = ' '.join(['Initialization failed with exception',
-									'{0}: {1}'.format(E.__class__.__name__, E.message)])
+									'{0}: {1}'.format(E.__class__.__name__,
+                                                      E.message)])
 			self.fail(failure_msg)
 
 	def test_indexing(self):
@@ -36,13 +37,15 @@ class TestCorpus(unittest.TestCase):
 		
 		for field in index_fields:
 			corpus.index(field)
-			self.assertIn(field, corpus.indices, '{0} not indexed.'.format(field))
+			self.assertIn(field, corpus.indices,
+                          '{0} not indexed.'.format(field))
 			
-			expected = len(set([o for p in corpus.papers.values() 
+			expected = len(set([o for p in corpus.papers
 							    for o in _iterable(getattr(p, field))]))
 			self.assertEqual(len(corpus.indices[field]), expected,
 							 'Index for {0} is the wrong size.'.format(field))
-		
+
+
 
 if __name__ == '__main__':
     unittest.main()
