@@ -2,7 +2,7 @@ import sys
 sys.path.append('../tethne')
 
 import unittest
-from tethne.base.ftparser import FTParser
+from tethne.readers.base import FTParser
 
 datapath = './tests/data/refactor_data/test.ft'
 

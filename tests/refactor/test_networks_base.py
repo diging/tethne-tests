@@ -3,7 +3,7 @@ sys.path.append('../tethne')
 
 import unittest
 
-from tethne.networks.base import cooccurrence, coupling
+from tethne.networks.base import cooccurrence, coupling, multipartite
 from tethne.classes.corpus import Corpus
 from tethne.readers.wos import WoSParser
 
@@ -50,6 +50,25 @@ class TestBaseNeworkMethods(unittest.TestCase):
 
         for s, t, attrs in g2.edges(data=True):
             self.assertGreaterEqual(attrs['weight'], min_weight)
+
+    def test_multipartite(self):
+        fsets = ['citations', 'authors']
+        g = multipartite(self.corpus, fsets)
+
+        # All nodes should be typed.
+        types = set()
+        self.assertIsInstance(g, nx.Graph)
+        for n, attrs in g.nodes(data=True):
+            self.assertIn('type', attrs)
+            types.add(attrs['type'])
+        for t in list(types):
+            self.assertIn(t, fsets + ['paper'])
+        self.assertEqual(len(types), 3)
+
+#        papers = WoSParser(datapath).parse()
+#        for paper in papers:
+#            print hasattr(paper, 'authorAddress')
+
 
 if __name__ == '__main__':
     unittest.main()

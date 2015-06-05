@@ -5,7 +5,7 @@ import unittest
 
 import networkx as nx
 
-from tethne.classes.graphcollection_refactor import GraphCollection
+from tethne.classes.graphcollection import GraphCollection
 
 
 datapath = './tests/data/refactor_data/wos.txt'
@@ -205,6 +205,84 @@ class TestGraphCollectionMethods(unittest.TestCase):
                       ''.join(["size(piecewise=True) should return a dict",
                                " with graph names as keys"]))
 
+    def test_getattr(self):
+        """
+        Can retrieve a graph as an attribute of the :class:`.GraphCollection`\.
+        """
+
+        self.assertIsInstance(self.G.test, nx.Graph)
+        self.assertIsInstance(self.G.test2, nx.Graph)
+        with self.assertRaises(AttributeError):
+            self.G.nosuchgraph
+
+    def test_collapse(self):
+        cgraph = self.G.collapse()
+
+        joint_nodes = set(self.graph.nodes()) | set(self.graph2.nodes())
+        self.assertIsInstance(cgraph, nx.Graph)
+        self.assertEqual(cgraph.order(), len(joint_nodes))
+
+        # All Node attributes should be retained.
+        for n, attrs in cgraph.nodes(data=True):
+            self.assertDictEqual(attrs, self.G.master_graph.node[n])
+
+        # Edge attributes should be retained, keyed on the graph associated
+        #  with the edge from which each value was obtained.
+        for s, t, attrs in cgraph.edges(data=True):
+            for k, v in attrs.iteritems():
+                if k != 'weight':
+                    for v_ in v.keys():
+                        self.assertIn(v_, ['test', 'test2'])
+
+    def test_analyze(self):
+        # By default, graph names are the top-level keys.
+        results = self.G.analyze('betweenness_centrality')
+        self.assertIsInstance(results, dict)
+        for gname in self.G.keys():
+            self.assertIn(gname, results)
+
+        # Passing results_by='node' re-organizes the results so that node
+        #  labels are the top-level key.
+        results_n = self.G.analyze('betweenness_centrality', invert=True)
+        for n in self.G.nodes():
+            self.assertIn(n, results_n)
+
+        # Asking for a non-existent method results in an AttributeError.
+        with self.assertRaises(AttributeError):
+            self.G.analyze('nosuch_method')
+
+        # Can use a custom `map` function (e.g. to support parallelism in the
+        #  future).
+        def mymapper(func, iterable, **kwargs):
+            r = map(func, iterable, **kwargs)
+            return [{k: v+5. for k, v in values.iteritems()} for values in r]
+
+        results_m = self.G.analyze('betweenness_centrality', mapper=mymapper)
+        for key, value in results.iteritems():
+            for k in value.keys():
+                self.assertEqual(results[key][k] + 5., results_m[key][k])
+
+    def test_analyze_edge(self):
+        results = self.G.analyze('edge_betweenness_centrality', invert=True)
+        for e in self.G.edges():
+            self.assertIn(e, results)
+
+    def test_analyze_graph(self):
+        results = self.G.analyze('is_connected')
+        for gname in self.G.keys():
+            self.assertIn(gname, results)
+
+    def test_node_history(self):
+        results = self.G.analyze('betweenness_centrality', invert=True)
+        hist = self.G.node_history(0, 'betweenness_centrality')
+
+        self.assertDictEqual(results[0], hist)
+
+    def test_edge_history(self):
+        results = self.G.analyze('edge_betweenness_centrality', invert=True)
+        hist = self.G.edge_history(0, 1, 'edge_betweenness_centrality')
+
+        self.assertDictEqual(results[0, 1], hist)
 
 if __name__ == '__main__':
     unittest.main()
