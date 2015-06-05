@@ -48,7 +48,12 @@ class TestFeatureSest(unittest.TestCase):
         """
         Initialize with no Features.
         """
-        featureset = FeatureSet()
+
+        try:
+            featureset = FeatureSet()
+            featureset.__init__()
+        except:
+            self.fail()
 
     def test_init_features(self):
         """

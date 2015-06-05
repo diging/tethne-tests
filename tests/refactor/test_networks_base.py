@@ -5,11 +5,12 @@ import unittest
 
 from tethne.networks.base import cooccurrence, coupling
 from tethne.classes.corpus import Corpus
-from tethne.readers.wos_refactor import WoSParser
+from tethne.readers.wos import WoSParser
 
 import networkx as nx
 
 datapath = './tests/data/refactor_data/wos.txt'
+
 
 class TestBaseNeworkMethods(unittest.TestCase):
     def setUp(self):
@@ -29,7 +30,7 @@ class TestBaseNeworkMethods(unittest.TestCase):
         self.assertIsInstance(g, nx.Graph)
         self.assertGreater(len(g.nodes()), 0)
         self.assertGreater(len(g.edges()), 0)
-        for s,t,attrs in g.edges(data=True):
+        for s, t, attrs in g.edges(data=True):
             self.assertEqual(len(attrs['features']), attrs['weight'])
 
     def test_coupling_min_weight(self):
@@ -52,4 +53,3 @@ class TestBaseNeworkMethods(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-    
